@@ -1,0 +1,22 @@
+#header-nav {
+  border-radius: 0;
+  border: 0;
+}
+
+.menu-content {
+  background-color: gray;
+  margin: 15px;
+}
+
+#nav-list {
+  background-color: cyan;
+}
+
+#nav-list a {
+  text-align: center;
+}
+
+#nav-list a:hover {
+  background-color: green;
+  color: white;
+}
