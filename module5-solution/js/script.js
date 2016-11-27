@@ -40,6 +40,9 @@ var showLoading = function (selector) {
 // with propValue in given 'string'
 var insertProperty = function (string, propName, propValue) {
   var propToReplace = "{{" + propName + "}}";
+
+  // propValue = propValue || "";
+
   string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
   return string;
@@ -317,11 +320,11 @@ function insertItemPrice(html,
                          priceValue) {
   // If not specified, replace with empty string
   if (!priceValue) {
-    return (html, pricePropName, "");
+    return insertProperty(html, pricePropName, "");
   }
 
   priceValue = "$" + priceValue.toFixed(2);
-  html = (html, pricePropName, priceValue);
+  html = insertProperty(html, pricePropName, priceValue);
   return html;
 }
 
@@ -332,11 +335,11 @@ function insertItemPortionName(html,
                                portionValue) {
   // If not specified, return original string
   if (!portionValue) {
-    return (html, portionPropName, "");
+    return insertProperty(html, portionPropName, "");
   }
 
   portionValue = "(" + portionValue + ")";
-  html = (html, portionPropName, portionValue);
+  html = insertProperty(html, portionPropName, portionValue);
   return html;
 }
 
